@@ -9,6 +9,11 @@ const { error } = require("console");
 const user_model = require("./models/user.model");
 const bcrypt = require("bcryptjs");
 
+
+app.use(express.json()); // for JSON payloads
+app.use(express.urlencoded({ extended: true })); // for form data
+
+
 // Connection with MongoDB
 
 mongoose.connect(db_config.DB_URL);
@@ -31,7 +36,7 @@ async function init() {
 
     if (user) {
       console.log("Admin is already present");
-      return
+      return;
     }
   } catch (error) {
     console.log("Error while reading the data", error);
@@ -50,6 +55,10 @@ async function init() {
     console.log("Error while creating Admin", error);
   }
 }
+
+// Stich the route to the server
+
+require("./routes/auth.route")(app);  // Call rotues and passing app Object
 
 // Start the server
 

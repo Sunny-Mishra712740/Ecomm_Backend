@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema ({
         type : String,
         required : true,
         default : "CUSTOMER",
-        enum : ["CUSTIMER", "ADMIN"]   // Only those specific fixed value the user can enter
+        enum : ["CUSTOMER", "ADMIN"]   // Only those specific fixed value the user can enter
     }
 },{timestamps : true, versionKey : false});
 
