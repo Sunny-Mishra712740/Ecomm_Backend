@@ -10,7 +10,7 @@ const user_model = require("./models/user.model");
 const bcrypt = require("bcryptjs");
 
 
-app.use(express.json()); // for JSON payloads
+app.use(express.json()); // Convert json to js object
 app.use(express.urlencoded({ extended: true })); // for form data
 
 
