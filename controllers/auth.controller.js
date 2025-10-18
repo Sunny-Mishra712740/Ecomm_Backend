@@ -47,6 +47,9 @@ exports.signup = async (req, res) => {
     }
 
     // Return response back to the user
+}
 
+exports.signin = (req, res) => {
+    console.log("Hello")
 
 }
